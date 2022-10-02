@@ -29,7 +29,7 @@ const socketNotify = require('./Socket/socketNotify')
 //   node: 'https://localhost:9200',
 //   auth: {
 //     username: 'elastic',
-//     password: 'ZlVtKrD3ihjz5D0sY88h'
+//     password: 'c2lDmBr0YqFFHAg3uu99'
 //   }
 // })
 
