@@ -1,0 +1,17 @@
+{
+    "DATABASE": {
+        "HOST": "localhost",
+        "PORT": 3306,
+        "USER": "root",
+        "PASSWORD": "Minh2121.",
+        "DB_NAME": "bookManagement_schema"
+    },
+
+    "SERVER": {
+        "HOST": 8080
+    },
+
+    "TOKEN_KEY": {
+        "SECRET_KEY" : "secret"
+    }
+}

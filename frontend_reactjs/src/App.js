@@ -1,25 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
+
+import {BrowserRouter as Router, Routes, Route} from "react-router-dom"
+import Login from "./components/Authentication/login"
+import AdminView from "./components/View/AdminView/AdminView"
+import Register from './components/Authentication/register'
+import ManageUser from "./components/View/AdminView/ManageUserAccounts/manageUserAccounts"
+import ErrorPage from "./components/View/errorPage"
+
+
+import PrivateRouteAdminView from "./components/Authentication/PrivateRoute/PrivateRouteAdminView"
+import PrivateRouteLogin from "./components/Authentication/PrivateRoute/PrivateRouteLogin"
 
 function App() {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <Router>
+      <Routes>
+        <Route element={<PrivateRouteAdminView />}>
+          <Route path="/view" element={<AdminView />}></Route>
+          <Route path="/manageUserAccounts" element={<ManageUser />}></Route>            
+        </Route >
+
+        <Route path="/" element={<PrivateRouteLogin />} >
+          <Route path="/login" element={<Login />}></Route>
+        </Route>
+
+        <Route path="/register" element={<Register />}></Route>
+
+        <Route path="/*" element={<ErrorPage />}></Route>
+        
+      </Routes>
+    </Router>
+  )
 }
 
 export default App;
