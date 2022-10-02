@@ -24,14 +24,14 @@ const route = require('./Routes/routes')
 
 const socketNotify = require('./Socket/socketNotify')
 
-const { Client } = require('@elastic/elasticsearch')
-const client = new Client({
-  node: 'https://localhost:9200',
-  auth: {
-    username: 'elastic',
-    password: 'ZlVtKrD3ihjz5D0sY88h'
-  }
-})
+// const { Client } = require('@elastic/elasticsearch')
+// const client = new Client({
+//   node: 'https://localhost:9200',
+//   auth: {
+//     username: 'elastic',
+//     password: 'ZlVtKrD3ihjz5D0sY88h'
+//   }
+// })
 
 // client.ping({
 //   requestTimeout: 3000, //ms
@@ -44,19 +44,19 @@ const client = new Client({
 // }
 // )
 
-client.ping({
-  // ping usually has a 3000ms timeout
-  requestTimeout: Infinity,
-  // undocumented params are appended to the query string
-  hello: "elasticsearch!"
-}, function (error) {
-  if (error) {
-    console.log(error)
-    console.trace('elasticsearch cluster is down!');
-  } else {
-    console.log('All is well');
-  }
-});
+// client.ping({
+//   // ping usually has a 3000ms timeout
+//   requestTimeout: Infinity,
+//   // undocumented params are appended to the query string
+//   hello: "elasticsearch!"
+// }, function (error) {
+//   if (error) {
+//     console.log(error)
+//     console.trace('elasticsearch cluster is down!');
+//   } else {
+//     console.log('All is well');
+//   }
+// });
 
   app.use(express.urlencoded({
       extended: true
